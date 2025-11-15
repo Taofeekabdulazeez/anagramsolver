@@ -1,8 +1,10 @@
-package main
+package api
 
 import (
 	"encoding/json"
 	"net/http"
+
+	"github.com/Taofeekabdulazeez/anagramsolver/anagram"
 )
 
 func Handler(w http.ResponseWriter, r *http.Request) {
@@ -18,7 +20,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	anagrams := FindAnagrams(word)
+	anagrams := anagram.FindAnagrams(word)
 
 	encoder.Encode(&SuccessResponse{
 		Words:   anagrams,

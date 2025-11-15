@@ -1,4 +1,4 @@
-package main
+package util
 
 import (
 	"encoding/json"
@@ -6,7 +6,7 @@ import (
 )
 
 func ReadAngramFile(alphabet rune) (words []string, err error) {
-	data, err := os.ReadFile("words/" + string(alphabet) + ".json")
+	data, err := os.ReadFile("internal/data/words/" + string(alphabet) + ".json")
 	if err != nil {
 		return nil, err
 	}

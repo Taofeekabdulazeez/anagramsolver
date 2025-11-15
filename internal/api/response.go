@@ -1,4 +1,4 @@
-package main
+package api
 
 type SuccessResponse struct {
 	Words   []string `json:"words"`
